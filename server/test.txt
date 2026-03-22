@@ -1,0 +1,1 @@
+Today meeting with product team we discussed new feature login otp not working for some users also frontend delay issue rahul will fix api by tomorrow and ui changes will be handled by priya deadline next monday also need to add analytics tracking and error logging
