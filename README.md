@@ -12,7 +12,7 @@ A lightweight, full-stack application built for the **Zoo Media AI Intern** asse
 ## ✅ Final Result (Zoo Media AI Intern 2026)
 The UI is a sleek, modern dashboard that translates AI responses into structured insights.
 
-![Zoo Media AI Summarizer Full Page](client\src\assets\zoo media project image.jpg)
+![Zoo Media AI Summarizer Full Page](client\src\assets\zoo-media-project-image.jpg)
 
 ---
 
