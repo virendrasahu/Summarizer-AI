@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import './App.css';
 import ResultCard from './components/ResultCard';
-
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-const API_URL = `${API_BASE_URL}/api/summarize`;
 
 function App() {
   const [text, setText] = useState('');
@@ -23,12 +19,27 @@ function App() {
     setResult(null);
 
     try {
-      const response = await axios.post(API_URL, { text });
-      setResult(response.data);
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/summarize`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ text })
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || `Server Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setResult(data);
     } catch (err) {
       console.error('API Error:', err);
-      const message = err.response?.data?.error || 'Failed to connect to the server. Make sure the backend is running.';
-      setError(message);
+      setError(err.message || 'Failed to connect to the server.');
     } finally {
       setLoading(false);
     }

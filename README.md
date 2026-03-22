@@ -3,7 +3,7 @@
 A lightweight, full-stack application built for the **Zoo Media AI Intern** assessment. It transforms messy, unstructured text into a clean, structured summary using Google Gemini.
 
 ## 🛠️ Tech Stack
-- **Frontend**: React.js (Vite), Axios, Vanilla CSS.
+- **Frontend**: React.js (Vite), Fetch API, Vanilla CSS.
 - **Backend**: Node.js (ES Modules), Express, Google Generative AI SDK, Zod, Dotenv.
 - **LLM**: Google Gemini 2.5 Flash Lite.
 
