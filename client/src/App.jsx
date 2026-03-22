@@ -3,7 +3,8 @@ import axios from 'axios';
 import './App.css';
 import ResultCard from './components/ResultCard';
 
-const API_URL = 'http://localhost:5000/api/summarize';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = `${API_BASE_URL}/api/summarize`;
 
 function App() {
   const [text, setText] = useState('');
